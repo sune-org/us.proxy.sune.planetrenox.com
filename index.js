@@ -41,4 +41,4 @@ Bun.serve({
   },
 })
 
-console.log(`🟢 us.proxy.sune.chat running on :${PORT}`)
+console.log(`🟢 us.proxy.sune.planetrenox.com running on :${PORT}`)
