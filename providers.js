@@ -147,7 +147,7 @@ export async function streamOpenRouter({ apiKey, body, signal, onDelta, isRunnin
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
-      'HTTP-Referer': 'https://sune.chat',
+      'HTTP-Referer': 'https://sune.planetrenox.com',
       'X-Title': 'Sune',
     },
     body: JSON.stringify(payload),
