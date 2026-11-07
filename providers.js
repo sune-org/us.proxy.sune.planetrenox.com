@@ -309,8 +309,7 @@ export async function streamAnthropic({ apiKey, body, signal, onDelta, isRunning
 }
 
 export async function streamGoogle({ apiKey, body, signal, onDelta, isRunning }) {
-  // SDK 3 defaults to v1, which lacks the *-latest aliases and some preview features
-  const ai = new GoogleGenAI({ apiKey, apiVersion: 'v1beta' })
+  const ai = new GoogleGenAI({ apiKey })
   const raw = body.model ?? ''
   const online = raw.endsWith(':online')
   const model = (online ? raw.slice(0, -7) : raw).replace(/^models\//, '')
