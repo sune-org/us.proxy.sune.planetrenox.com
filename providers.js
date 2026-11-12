@@ -58,7 +58,7 @@ const inlineFromDataUrl = u => {
 }
 
 // Gemini samples video at 1 fps by default; media resolution stays at the default (70 tokens/frame)
-const VIDEO_FPS = 3
+const VIDEO_FPS = 4
 const withVideoFps = p => p?.inlineData?.mimeType?.startsWith('video/') ? { ...p, videoMetadata: { fps: VIDEO_FPS } } : p
 
 function mapPartToGoogle(p) {
