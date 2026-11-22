@@ -53,7 +53,7 @@ function settingsOf(o, pre = '') {
 
 function report(r, head, tags, extra) {
   // A short hash, never the id: the id would let anyone reading the topic fetch the reply
-  const title = `**${head}** · \`${r.provider || '?'}/${r.model || '?'}\` · run \`${shx(r.rid, 4).hex()}\``
+  const title = `**${head}** · \`${r.provider || '?'}/${r.model || '?'}\` · run \`${shx(r.rid, 4).base(36)}\``
   notify([title, extra, r.settings].filter(Boolean).join('\n\n'), 2, tags)
 }
 
