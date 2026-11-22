@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto'
+import { hex } from 'speckhashx'
 import { notify } from './notify.js'
 import { streamOpenRouter, streamOpenAI, streamAnthropic, streamGoogle } from './providers.js'
 
@@ -53,7 +53,7 @@ function settingsOf(o, pre = '') {
 
 function report(r, head, tags, extra) {
   // A short hash, never the id: the id would let anyone reading the topic fetch the reply
-  const title = `**${head}** · \`${r.provider || '?'}/${r.model || '?'}\` · run \`${createHash('sha256').update(r.rid).digest('hex').slice(0, 8)}\``
+  const title = `**${head}** · \`${r.provider || '?'}/${r.model || '?'}\` · run \`${hex(r.rid, 4)}\``
   notify([title, extra, r.settings].filter(Boolean).join('\n\n'), 2, tags)
 }
 
